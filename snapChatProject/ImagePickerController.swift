@@ -11,10 +11,16 @@ import UIKit
 class ImagePickerController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet var imageCollectionView: UICollectionView!
+    var imageToSend : UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imageCollectionView.collectionViewLayout = ImageFlowLayout.init()
         self.imageCollectionView.backgroundColor = UIColor.lightGray
+        //my code here
+        imageCollectionView.delegate = self
+        imageCollectionView.dataSource = self
+        //
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,15 +30,24 @@ class ImagePickerController: UIViewController, UICollectionViewDataSource, UICol
 
     func selectImage(_ image: UIImage) {
         //The image being selected is passed in as "image".
+        imageToSend = image
+        performSegue(withIdentifier: "toPost", sender: self)
     }
     
-    
+    // my code here
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toPost") {
+            if let dest = segue.destination as? ImagePostController {
+                dest.theImage = self.imageToSend
+            }
+        }
+    }
+    //
     
     //DON'T MODIFY CODE HERE AND BELOW!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return allImages.count
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -40,6 +55,7 @@ class ImagePickerController: UIViewController, UICollectionViewDataSource, UICol
         cell.image.image = allImages[indexPath.row]
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedCell = collectionView.cellForItem(at: indexPath) as! imageCollectionVieCell
         selectImage(selectedCell.image.image!)

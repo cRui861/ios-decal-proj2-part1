@@ -14,6 +14,10 @@ class ImageFlowLayout: UICollectionViewFlowLayout {
         setupLayout()
     }
     
+    func selectImage(_ image: UIImage) {
+        
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupLayout()
