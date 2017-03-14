@@ -37,7 +37,11 @@ class ImagePostController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func goPost(_ sender: UIButton) {
         let alert = UIAlertController(title: "Posted!", message: "Return to post another picture", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
+        let done = UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: {
+            (_)in
+            self.performSegue(withIdentifier: "unWindToImPick", sender: self)
+        })
+        alert.addAction(done)
         self.present(alert, animated: true, completion: nil)
     }
     

@@ -42,6 +42,8 @@ class ImagePickerController: UIViewController, UICollectionViewDataSource, UICol
             }
         }
     }
+    
+    @IBAction func unWindToImPick(segue: UIStoryboardSegue) {}
     //
     
     //DON'T MODIFY CODE HERE AND BELOW!
