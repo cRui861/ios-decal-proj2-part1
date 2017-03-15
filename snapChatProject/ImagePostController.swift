@@ -33,6 +33,7 @@ class ImagePostController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         feed.text = threadNames[indexPath.row]
+        threads[threadNames[indexPath.row]] = [imageHold!]
     }
     
     @IBAction func goPost(_ sender: UIButton) {

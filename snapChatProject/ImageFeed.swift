@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 // This is the only line of code you should be modifying
+var imageHold : UIImage?
 var threads: [String: [UIImage]] = ["Memes": [], "Dog Spots": [], "Random": []]
 //
 

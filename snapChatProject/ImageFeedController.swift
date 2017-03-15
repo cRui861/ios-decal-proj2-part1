@@ -11,6 +11,7 @@ import UIKit
 
 class ImageFeedController: UITableViewController {
     
+    var imageToSend : UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,4 +40,13 @@ class ImageFeedController: UITableViewController {
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
     }
+    
+    func selectImage(_ image: UIImage) {
+        //The image being selected is passed in as "image".
+        imageToSend = image
+        //imageHold = imageToSend // giving the global image holder the image
+        performSegue(withIdentifier: "toPost", sender: self)
+    }
+
+    
 }

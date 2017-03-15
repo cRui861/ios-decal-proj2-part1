@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="-479" y="309"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Controller-->
         <scene sceneID="62R-Tc-7Sb">
             <objects>
-                <viewController id="hN8-9p-crk" sceneMemberID="viewController">
+                <viewController id="hN8-9p-crk" customClass="imageController" customModule="snapChatProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uKU-Fe-fCJ"/>
                         <viewControllerLayoutGuide type="bottom" id="nAs-z7-MR8"/>
@@ -133,25 +133,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J9E-Bt-r17">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zpH-h3-X91">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="J9E-Bt-r17" secondAttribute="height" multiplier="375:667" id="Kec-1G-LAw"/>
+                                    <constraint firstAttribute="height" constant="667" id="K3c-Ih-zpg"/>
+                                    <constraint firstAttribute="width" constant="375" id="NII-uU-HWC"/>
+                                    <constraint firstAttribute="width" secondItem="zpH-h3-X91" secondAttribute="height" multiplier="375:667" id="omZ-aK-qn2"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="J9E-Bt-r17" firstAttribute="leading" secondItem="5k2-97-27x" secondAttribute="leading" id="I7n-JO-7Vg"/>
-                            <constraint firstItem="nAs-z7-MR8" firstAttribute="top" secondItem="J9E-Bt-r17" secondAttribute="bottom" id="Zm2-3C-u1v"/>
-                            <constraint firstItem="J9E-Bt-r17" firstAttribute="top" secondItem="5k2-97-27x" secondAttribute="top" id="gPE-6V-Bgv"/>
-                            <constraint firstAttribute="trailing" secondItem="J9E-Bt-r17" secondAttribute="trailing" id="itH-wx-XZQ"/>
+                            <constraint firstAttribute="trailing" secondItem="zpH-h3-X91" secondAttribute="trailing" id="YPn-hJ-HeN"/>
+                            <constraint firstAttribute="bottom" secondItem="zpH-h3-X91" secondAttribute="bottom" id="grH-1e-QKg"/>
+                            <constraint firstItem="zpH-h3-X91" firstAttribute="leading" secondItem="5k2-97-27x" secondAttribute="leading" id="vEr-Ma-3tL"/>
+                            <constraint firstItem="zpH-h3-X91" firstAttribute="top" secondItem="5k2-97-27x" secondAttribute="top" id="y53-aO-mWo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="snapPic" destination="zpH-h3-X91" id="PSb-Tq-oub"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opZ-LQ-4op" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="497" y="309"/>
+            <point key="canvasLocation" x="496.80000000000001" y="308.9955022488756"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="562-op-NQQ">
