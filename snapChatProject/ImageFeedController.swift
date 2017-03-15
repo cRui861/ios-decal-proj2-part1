@@ -10,17 +10,28 @@ import Foundation
 import UIKit
 
 class ImageFeedController: UITableView {
-
     
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
-//        
-//    }
-//    
-//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//        
-//    }
+    var testingNum = 5
+    //var sectionTitles = ["Memes", "Dog Spots", "Random"]
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return testingNum //this will be changed but is being bitchy
+        // return thread[section].count doesn't work lol 
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return threadNames[section]
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "toPicture", for: indexPath) as! imageFeedTableViewCell
+        cell.hasRead.image = #imageLiteral(resourceName: "unread")
+        cell.whoRead.text = "Ichirou"
+        cell.timeRead.text = "1 Minute"
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+    }
 }

@@ -11,4 +11,8 @@ import UIKit
 
 class imageFeedTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var hasRead: UIImageView!
+    @IBOutlet weak var whoRead: UILabel!
+    @IBOutlet weak var timeRead: UILabel!
+    
 }
